@@ -1,0 +1,65 @@
+﻿<Window x:Class="testingpoe1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testingpoe1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="900" Background="#FF5A5A5A" FontWeight="Bold">
+    <Grid Height="434" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="379*"/>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="340*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="textbox2" HorizontalAlignment="Left" Margin="311,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textbox2_TextChanged" Height="22" Grid.ColumnSpan="3" Background="#FFC3C3C3"/>
+        <TextBox x:Name="textbox3" HorizontalAlignment="Left" Margin="311,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="3" Background="#FFC3C3C3"/>
+        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Margin="311,-17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Height="22" Grid.ColumnSpan="3" Background="#FFC3C3C3"/>
+        <Button x:Name="ok" Content="OK" HorizontalAlignment="Left" Margin="170,-21,0,0" VerticalAlignment="Top" Width="106" Click="ok_Click" Grid.Column="3" Height="20"/>
+        <TextBox x:Name="textbox4" HorizontalAlignment="Left" Margin="228,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3" Height="18" Background="#FF6B6B6B" BorderBrush="#FF6D6D6D" Grid.ColumnSpan="2"/>
+        <Label Content="please enter the number of credits obtained" HorizontalAlignment="Left" Margin="21,-21,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="258"/>
+        <Label Content="please enter the number of weeks in the semester" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="26" Width="290" FontWeight="Bold"/>
+        <Label Content="please enter the number of class hours per week" HorizontalAlignment="Left" Margin="21,37,0,0" VerticalAlignment="Top" Height="26" Width="290" FontWeight="Bold"/>
+        <DatePicker x:Name="date" HorizontalAlignment="Left" Margin="311,-45,0,0" VerticalAlignment="Top" Width="120" Height="22" Text="ff" IsTodayHighlighted="True" RenderTransformOrigin="0.492,0.8" Grid.ColumnSpan="3" Background="#FFC1C1C1" Foreground="#FFA0A0A0">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FFA3AEB9"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF9CCFF5" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <Label Content="please enter the current date" HorizontalAlignment="Left" Margin="21,-47,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="173"/>
+        <TextBox x:Name="modcode" HorizontalAlignment="Left" Margin="311,-77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="3" Background="#FFC3C3C3"/>
+        <Label Content="please enter the module code" HorizontalAlignment="Left" Margin="21,-77,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="177"/>
+        <TextBox x:Name="modname" HorizontalAlignment="Left" Margin="311,-104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="3" Background="#FFC3C3C3"/>
+        <Label Content="please enter the module name" HorizontalAlignment="Left" Margin="19,-108,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="181"/>
+        <DataGrid x:Name="daata" Grid.ColumnSpan="4" Margin="213,122,123,83" Background="#FF292929" BorderBrush="#FF040404" FontFamily="Cambria">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Module Name" Binding="{Binding modulename}" Width="90"/>
+                <DataGridTextColumn Header="Module Code" Binding="{Binding modulecode}" Width="90"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding dates}" Width="90"/>
+                <DataGridTextColumn Header="Study hours remaining for week" Binding="{Binding hours}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker HorizontalAlignment="Left" Margin="311,-134,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="120" Background="#FFC8C8C8" Foreground="#FFA09F9F" Height="24">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FFA3AEB9"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FFC3C3C3" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <Label Content="please enter the start date of the semester" HorizontalAlignment="Left" Margin="19,-134,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="249"/>
+        <Label Content="please click ok to add data to the table and determine&#xD;&#xA; your reqiured self study hours per week " HorizontalAlignment="Left" Margin="66,-68,0,0" VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Label Grid.Column="3" Content="self-study hours =" HorizontalAlignment="Left" Margin="110,16,0,0" VerticalAlignment="Top"/>
+        <Label Content="Time Manager" HorizontalAlignment="Left" Margin="5,-172,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="362" FontSize="20" FontFamily="Californian FB" Grid.Column="1"/>
+
+
+    </Grid>
+</Window>
